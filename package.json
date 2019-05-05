@@ -1,0 +1,29 @@
+{
+  "name": "rxjs-react-demo",
+  "version": "1.0.0",
+  "description": "RxJS 在 React 中的应用示例项目",
+  "main": "index.js",
+  "repository": "git@github.com:Brooooooklyn/rxjs-in-react-demo.git",
+  "author": "LongYinan",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/webpack": "^4.4.30",
+    "lerna": "^3.13.4",
+    "typescript": "^3.4.5",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "dependencies": {
+    "antd": "^3.16.6",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "redux": "^4.0.1",
+    "redux-observable": "^1.1.0",
+    "rxjs": "^6.5.1"
+  }
+}

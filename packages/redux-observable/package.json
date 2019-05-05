@@ -1,0 +1,32 @@
+{
+  "name": "@demo/redux-observable",
+  "version": "0.0.0",
+  "description": "redux-observable demo",
+  "keywords": [
+    "redux",
+    "observable",
+    "redux-observable",
+    "rxjs"
+  ],
+  "author": "LongYinan <lynweklm@gmail.com>",
+  "homepage": "https://github.com/Brooooooklyn/rxjs-in-react-demo",
+  "license": "MIT",
+  "main": "./src/index.tsx",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Brooooooklyn/rxjs-in-react-demo.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/Brooooooklyn/rxjs-in-react-demo/issues"
+  }
+}
