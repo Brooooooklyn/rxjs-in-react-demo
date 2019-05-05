@@ -1,5 +1,5 @@
 {
-  "name": "@demo/redux-observable",
+  "name": "@demo/raw",
   "version": "0.0.0",
   "description": "redux-observable demo",
   "keywords": [
@@ -11,7 +11,7 @@
   "author": "LongYinan <lynweklm@gmail.com>",
   "homepage": "https://github.com/Brooooooklyn/rxjs-in-react-demo",
   "license": "MIT",
-  "main": "./src/index.tsx",
+  "main": "./src/index.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -28,5 +28,11 @@
   },
   "bugs": {
     "url": "https://github.com/Brooooooklyn/rxjs-in-react-demo/issues"
+  },
+  "dependencies": {
+    "redux-actions": "^2.6.5"
+  },
+  "devDependencies": {
+    "@types/redux-actions": "^2.6.0"
   }
 }
