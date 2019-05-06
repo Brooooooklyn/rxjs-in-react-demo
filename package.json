@@ -19,6 +19,7 @@
     "@types/react-redux": "^7.0.8",
     "@types/react-router": "^4.4.5",
     "@types/react-router-dom": "^4.3.2",
+    "@types/redux-actions": "^2.6.0",
     "@types/webpack": "^4.4.30",
     "css-loader": "^2.1.1",
     "happypack": "^5.0.1",
@@ -32,6 +33,7 @@
     "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
+    "@asuka/di": "^0.1.5",
     "antd": "^3.16.6",
     "connected-react-router": "^6.4.0",
     "react": "^16.8.6",
@@ -40,7 +42,10 @@
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "redux": "^4.0.1",
+    "redux-actions": "^2.6.5",
+    "redux-epics-decorator": "^0.10.4",
     "redux-observable": "^1.1.0",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.1"
   }
 }

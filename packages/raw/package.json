@@ -28,11 +28,5 @@
   },
   "bugs": {
     "url": "https://github.com/Brooooooklyn/rxjs-in-react-demo/issues"
-  },
-  "dependencies": {
-    "redux-actions": "^2.6.5"
-  },
-  "devDependencies": {
-    "@types/redux-actions": "^2.6.0"
   }
 }

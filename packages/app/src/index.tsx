@@ -1,3 +1,4 @@
+import 'reflect-metadata'
 import React from 'react'
 import { render } from 'react-dom'
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
@@ -5,7 +6,7 @@ import { Provider } from 'react-redux'
 import { Menu } from 'antd'
 
 import { store } from './redux'
-import { Raw } from './modules'
+import { Raw, Decorator } from './modules'
 
 import 'antd/dist/antd.css'
 
@@ -18,9 +19,15 @@ const App = () =>
             redux-observable
           </Link>
         </Menu.Item>
+        <Menu.Item>
+          <Link to='/decorator'>
+            redux-epics-decorator
+          </Link>
+        </Menu.Item>
       </Menu>
       <Switch>
         <Route exact={true} path="/redux-observable" component={Raw} />
+        <Route exact={true} path="/decorator" component={Decorator} />
       </Switch>
     </BrowserRouter>
   </Provider>

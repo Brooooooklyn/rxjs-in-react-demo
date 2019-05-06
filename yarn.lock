@@ -23,6 +23,15 @@
   resolved "https://registry.npm.taobao.org/@ant-design/icons/download/@ant-design/icons-1.2.1.tgz#8e19301b1433ec67d6bbd0e892782e2ade561ff9"
   integrity sha1-jhkwGxQz7GfWu9DoknguKt5WH/k=
 
+"@asuka/di@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.npm.taobao.org/@asuka/di/download/@asuka/di-0.1.5.tgz#80b3ce2d60ede10d6eb517bc9d033cb09109dac7"
+  integrity sha1-gLPOLWDt4Q1utRe8nQM8sJEJ2sc=
+  dependencies:
+    injection-js "^2.2.1"
+  optionalDependencies:
+    reflect-metadata "^0.1.13"
+
 "@babel/runtime@^7.1.2", "@babel/runtime@^7.4.3":
   version "7.4.4"
   resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.4.4.tgz#dc2e34982eb236803aa27a07fea6857af1b9171d"
@@ -3831,6 +3840,11 @@ init-package-json@^1.10.3:
     validate-npm-package-license "^3.0.1"
     validate-npm-package-name "^3.0.0"
 
+injection-js@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.npm.taobao.org/injection-js/download/injection-js-2.2.1.tgz#a8d6a085b2f0b8d8650f6f4487f6abb8cc0d67ce"
+  integrity sha1-qNaghbLwuNhlD29Eh/aruMwNZ84=
+
 inquirer@^6.2.0:
   version "6.3.1"
   resolved "https://registry.npm.taobao.org/inquirer/download/inquirer-6.3.1.tgz#7a413b5e7950811013a3db491c61d1f3b776e8e7"
@@ -6617,6 +6631,15 @@ redux-actions@^2.6.5:
     reduce-reducers "^0.4.3"
     to-camel-case "^1.0.0"
 
+redux-epics-decorator@^0.10.4:
+  version "0.10.4"
+  resolved "https://registry.npm.taobao.org/redux-epics-decorator/download/redux-epics-decorator-0.10.4.tgz#6a647b262a959835dedb798bc8e393e1c7ed9975"
+  integrity sha1-amR7JiqVmDXe23mLyOOT4cftmXU=
+  dependencies:
+    injection-js "^2.2.1"
+    reflect-metadata "^0.1.13"
+    tslib "^1.9.3"
+
 redux-observable@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/redux-observable/download/redux-observable-1.1.0.tgz#323a8fe53e89fdb519be2807b55f08e21c13e6f1"
@@ -6629,6 +6652,11 @@ redux@^4.0.0, redux@^4.0.1:
   dependencies:
     loose-envify "^1.4.0"
     symbol-observable "^1.2.0"
+
+reflect-metadata@^0.1.13:
+  version "0.1.13"
+  resolved "https://registry.npm.taobao.org/reflect-metadata/download/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
+  integrity sha1-Z648pXyXKiqhZCsQ/jY/4y1J3Ag=
 
 regenerator-runtime@^0.11.0:
   version "0.11.1"
@@ -7663,7 +7691,7 @@ ts-loader@^5.4.5:
     micromatch "^3.1.4"
     semver "^5.0.1"
 
-tslib@^1.9.0:
+tslib@^1.9.0, tslib@^1.9.3:
   version "1.9.3"
   resolved "https://registry.npm.taobao.org/tslib/download/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha1-1+TdeSRdhUKMTX5IIqeZF5VMooY=
