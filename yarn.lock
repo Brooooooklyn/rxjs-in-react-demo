@@ -1356,6 +1356,13 @@ aws4@^1.8.0:
   resolved "https://registry.npm.taobao.org/aws4/download/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
   integrity sha1-8OAD2cqef1nHpQiUXXsu+aBKVC8=
 
+ayanami@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.npm.taobao.org/ayanami/download/ayanami-0.9.1.tgz#4e7c5d378d923d58c99e861f43fa57d7676119ff"
+  integrity sha1-TnxdN42SPVjJnoYfQ/pX12dhGf8=
+  dependencies:
+    shallowequal "^1.1.0"
+
 babel-runtime@6.x, babel-runtime@^6.23.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.npm.taobao.org/babel-runtime/download/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"

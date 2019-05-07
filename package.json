@@ -35,7 +35,9 @@
   "dependencies": {
     "@asuka/di": "^0.1.5",
     "antd": "^3.16.6",
+    "ayanami": "^0.9.1",
     "connected-react-router": "^6.4.0",
+    "lodash": "^4.17.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",

@@ -1,11 +1,11 @@
 {
-  "name": "@demo/app",
+  "name": "@demo/hooks",
   "version": "0.0.0",
-  "description": "> TODO: description",
+  "description": "Domain style hooks module",
   "author": "LongYinan <lynweklm@gmail.com>",
   "homepage": "https://github.com/Brooooooklyn/rxjs-in-react-demo#readme",
   "license": "MIT",
-  "main": "lib/app.js",
+  "main": "./src/index.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -24,8 +24,6 @@
     "url": "https://github.com/Brooooooklyn/rxjs-in-react-demo/issues"
   },
   "dependencies": {
-    "@demo/decorator": "^0.0.0",
-    "@demo/hooks": "^0.0.0",
     "@demo/raw": "^0.0.0"
   }
 }

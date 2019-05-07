@@ -3,7 +3,7 @@ const ModuleDependencyWarning = require('webpack/lib/ModuleDependencyWarning')
 
 module.exports = class IgnoreNotFoundExportPlugin {
   apply (compiler) {
-    const messageRegExp = /export '.*'( \(reexported as '.*'\))? was not found in/
+    const messageRegExp = /export '.*'( \((reexported|imported) as '.*'\))? was not found in/
     function doneHook (stats) {
       stats.compilation.warnings = stats.compilation.warnings.filter(function (warn) {
         if (warn instanceof ModuleDependencyWarning && messageRegExp.test(warn.message)) {
