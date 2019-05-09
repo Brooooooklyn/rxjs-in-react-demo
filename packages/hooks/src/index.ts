@@ -19,7 +19,7 @@ import {
   distinctUntilChanged
 } from 'rxjs/operators'
 import { message } from 'antd'
-import { ajax } from 'rxjs/ajax'
+import { RepoService } from './service'
 
 @Singleton()
 export class HooksState extends Ayanami<RawState> {
@@ -30,6 +30,10 @@ export class HooksState extends Ayanami<RawState> {
   }
 
   @DefineAction() retry$!: Observable<void>
+
+  constructor(private repoService: RepoService) {
+    super()
+  }
 
   @Reducer()
   loading(_: void, state: RawState) {
@@ -53,7 +57,7 @@ export class HooksState extends Ayanami<RawState> {
       debounceTime(300),
       distinctUntilChanged(),
       switchMap(user =>
-        ajax.getJSON<Repo[]>(`https://api.github.com/users/${user}/repos`).pipe(
+        this.repoService.getRepoByUsers(user).pipe(
           map(repos => this.getActions().success(repos)),
           startWith(this.getActions().loading()),
           catchError(err => {
