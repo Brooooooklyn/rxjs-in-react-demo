@@ -11,7 +11,7 @@ class FakeRepoService {
   getRepoByUsers = stub()
 }
 
-describe('redux-epics-decorator specs', () => {
+describe('ayanami specs', () => {
   let fakeTimer: SinonFakeTimers
   let ajaxStub: SinonStub
   let hookModule: HooksModule
