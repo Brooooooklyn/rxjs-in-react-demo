@@ -13,7 +13,7 @@ import { DecoratorModule, DispatchProps } from './index'
 import { Provider } from 'react-redux'
 
 class FakeRepoService {
-  getRepoByUsers = noop
+  getRepoByUsers = stub()
 }
 
 const Component = () => <div />
@@ -41,11 +41,11 @@ describe('redux-epics-decorator specs', () => {
     })
     const root = mount(<Provider store={store}><Container/></Provider>)
     props = root.find(Component).props() as any
-    ajaxStub = stub(testModule.getInstance(RepoService), 'getRepoByUsers')
+    ajaxStub = testModule.getInstance(RepoService).getRepoByUsers as SinonStub
   })
 
   afterEach(() => {
-    ajaxStub.restore()
+    ajaxStub.reset()
     fakeTimer.restore()
   })
 
