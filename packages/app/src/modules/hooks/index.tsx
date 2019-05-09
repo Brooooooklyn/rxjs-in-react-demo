@@ -49,12 +49,12 @@ export const HooksContainer = memo(() => {
   )
 
   const loadingNode = stateProps.loading ? <Icon type="loading" /> : null
-    return (
-      <>
-        <Input.Search onChange={onChange} />
-        {loadingNode}
-        {retryButton}
-        <Repos repos={stateProps.repos} />
-      </>
-    )
+  return (
+    <>
+      <Input.Search onChange={onChange} />
+      {loadingNode}
+      {retryButton}
+      <Repos repos={stateProps.repos} />
+    </>
+  )
 })
