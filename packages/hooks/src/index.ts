@@ -50,8 +50,8 @@ export class HooksState extends Ayanami<RawState> {
   fetchRepoByUser(payload$: Observable<string>): Observable<EffectAction> {
     return payload$.pipe(
       filter(user => !!user),
-      distinctUntilChanged(),
       debounceTime(300),
+      distinctUntilChanged(),
       switchMap(user =>
         ajax.getJSON<Repo[]>(`https://api.github.com/users/${user}/repos`).pipe(
           map(repos => this.getActions().success(repos)),

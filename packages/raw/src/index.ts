@@ -40,8 +40,8 @@ const fetchRepoByUser = (action$: Observable<Action<string>>) =>
     ofType(`${REQUESTED_USER_REPOS}`),
     map(({ payload: user }) => user),
     filter(user => !!user),
-    distinctUntilChanged(),
     debounceTime(300),
+    distinctUntilChanged(),
     switchMap(user =>
       ajax.getJSON<Repo[]>(`https://api.github.com/users/${user}/repos`).pipe(
         map(RECEIVED_REPOS),
