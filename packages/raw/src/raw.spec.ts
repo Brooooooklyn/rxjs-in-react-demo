@@ -6,8 +6,8 @@ const fakeAjax = {
 }
 
 jest.mock('rxjs/ajax', () => ({ ajax: fakeAjax }))
-import { configureStore } from '@demo/app/src/redux/store'
-import { GlobalState } from '@demo/app/src/redux'
+import { configureStore } from '@demo/app/redux/store'
+import { GlobalState } from '@demo/app/redux'
 import { REQUESTED_USER_REPOS } from './index'
 import { of, timer, throwError } from 'rxjs'
 import { mapTo } from 'rxjs/operators'

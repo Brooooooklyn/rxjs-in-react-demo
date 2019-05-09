@@ -32,7 +32,8 @@
     ],
     "baseUrl": "./packages",
     "paths": {
-      "@demo/*": ["./*/src"]
+      "@demo/*": ["./*/src"],
+      "@demo/app/*": ["./app/src/*"]
     }
   }
 }

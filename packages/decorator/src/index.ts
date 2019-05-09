@@ -17,9 +17,10 @@ import {
   repeatWhen,
   distinctUntilChanged
 } from 'rxjs/operators'
-import { ajax } from 'rxjs/ajax'
 import { message } from 'antd'
 import { Action } from 'redux-actions'
+
+import { RepoService } from './service'
 
 @Module('decorator')
 export class DecoratorModule extends EffectModule<RawState> {
@@ -30,6 +31,10 @@ export class DecoratorModule extends EffectModule<RawState> {
   }
 
   @DefineAction() retry$!: Observable<void>
+
+  constructor(private repoService: RepoService) {
+    super()
+  }
 
   @Effect({
     loading: (state: RawState) => {
@@ -48,7 +53,7 @@ export class DecoratorModule extends EffectModule<RawState> {
       debounceTime(300),
       distinctUntilChanged(),
       switchMap(user =>
-        ajax.getJSON<Repo[]>(`https://api.github.com/users/${user}/repos`).pipe(
+        this.repoService.getRepoByUsers(user).pipe(
           map(this.createAction('success')),
           startWith(this.createAction('loading')()),
           catchError(err => {
