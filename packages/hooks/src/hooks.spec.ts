@@ -5,7 +5,7 @@ import { of, timer, throwError } from 'rxjs'
 import { mapTo } from 'rxjs/operators'
 
 import { RepoService } from './service'
-import { HooksState, StateProps } from './index'
+import { HooksModule, StateProps } from './index'
 
 class FakeRepoService {
   getRepoByUsers = stub()
@@ -14,8 +14,8 @@ class FakeRepoService {
 describe('redux-epics-decorator specs', () => {
   let fakeTimer: SinonFakeTimers
   let ajaxStub: SinonStub
-  let hookState: HooksState
-  let actions: ActionMethodOfAyanami<HooksState, StateProps>
+  let hookModule: HooksModule
+  let actions: ActionMethodOfAyanami<HooksModule, StateProps>
   const debounce = 300 // debounce in epic
 
   beforeEach(() => {
@@ -24,8 +24,8 @@ describe('redux-epics-decorator specs', () => {
       .overrideProvider(RepoService)
       .useClass(FakeRepoService)
       .compile()
-    hookState = testModule.getInstance(HooksState)
-    actions = getAllActionsForTest(hookState)
+    hookModule = testModule.getInstance(HooksModule)
+    actions = getAllActionsForTest(hookModule)
     ajaxStub = testModule.getInstance(RepoService).getRepoByUsers as SinonStub
   })
 
@@ -42,7 +42,7 @@ describe('redux-epics-decorator specs', () => {
 
     fakeTimer.tick(debounce)
 
-    expect(hookState.getState().repos).toHaveLength(0)
+    expect(hookModule.getState().repos).toHaveLength(0)
   })
 
   it('should get repos by name', () => {
@@ -54,7 +54,7 @@ describe('redux-epics-decorator specs', () => {
 
     fakeTimer.tick(debounce)
 
-    expect(hookState.getState().repos).toEqual(repos)
+    expect(hookModule.getState().repos).toEqual(repos)
   })
 
   it('should set loading and finish loading', () => {
@@ -64,15 +64,15 @@ describe('redux-epics-decorator specs', () => {
 
     actions.fetchRepoByUser(username)
 
-    expect(hookState.getState().loading).toBe(false)
+    expect(hookModule.getState().loading).toBe(false)
 
     fakeTimer.tick(debounce)
 
-    expect(hookState.getState().loading).toBe(true)
+    expect(hookModule.getState().loading).toBe(true)
 
     fakeTimer.tick(delay)
 
-    expect(hookState.getState().loading).toBe(false)
+    expect(hookModule.getState().loading).toBe(false)
   })
 
   it('should catch error', () => {
@@ -84,6 +84,6 @@ describe('redux-epics-decorator specs', () => {
 
     fakeTimer.tick(debounce)
 
-    expect(hookState.getState().error).toBe(true)
+    expect(hookModule.getState().error).toBe(true)
   })
 })

@@ -22,7 +22,7 @@ import { message } from 'antd'
 import { RepoService } from './service'
 
 @Singleton()
-export class HooksState extends Ayanami<RawState> {
+export class HooksModule extends Ayanami<RawState> {
   defaultState = {
     repos: [],
     loading: false,
