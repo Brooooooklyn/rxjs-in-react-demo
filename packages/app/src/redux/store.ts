@@ -3,6 +3,7 @@ import { createEpicMiddleware } from 'redux-observable'
 import { routerMiddleware } from 'connected-react-router'
 import { catchError } from 'rxjs/operators'
 import { empty } from 'rxjs'
+import { identity } from 'lodash'
 
 import { rootReducer, GlobalState } from './reducer'
 import { rootEpic } from './epics'
@@ -17,7 +18,7 @@ export const configureStore = () => {
       applyMiddleware(routerMiddleware(history), epicMiddleware),
       window.__REDUX_DEVTOOLS_EXTENSION__
         ? window.__REDUX_DEVTOOLS_EXTENSION__({ name: 'rxjs-in-react' })
-        : () => {}
+        : identity
     )
   ) as any
 

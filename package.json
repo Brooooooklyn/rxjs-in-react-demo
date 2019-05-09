@@ -11,20 +11,28 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "webpack-dev-server --progress --color"
+    "start": "webpack-dev-server --config ./tools/webpack.config.js --progress --color",
+    "jest": "jest --config ./tools/jest.config.js"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.12",
+    "@types/lodash": "^4.14.124",
     "@types/react": "^16.8.16",
     "@types/react-dom": "^16.8.4",
     "@types/react-redux": "^7.0.8",
     "@types/react-router": "^4.4.5",
     "@types/react-router-dom": "^4.3.2",
     "@types/redux-actions": "^2.6.0",
+    "@types/sinon": "^7.0.11",
     "@types/webpack": "^4.4.30",
     "css-loader": "^2.1.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
     "happypack": "^5.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.8.0",
     "lerna": "^3.13.4",
+    "sinon": "^7.3.2",
     "style-loader": "^0.23.1",
     "ts-loader": "^5.4.5",
     "typescript": "^3.4.5",
