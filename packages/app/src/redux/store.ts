@@ -15,8 +15,8 @@ export const configureStore = () => {
     rootReducer,
     compose(
       applyMiddleware(routerMiddleware(history), epicMiddleware),
-      window.devToolsExtension
-        ? window.devToolsExtension({ name: 'noj-jobs' })
+      window.__REDUX_DEVTOOLS_EXTENSION__
+        ? window.__REDUX_DEVTOOLS_EXTENSION__({ name: 'rxjs-in-react' })
         : () => {}
     )
   ) as any
