@@ -14,7 +14,8 @@ import {
   map,
   startWith,
   catchError,
-  repeatWhen
+  repeatWhen,
+  distinctUntilChanged
 } from 'rxjs/operators'
 import { ajax } from 'rxjs/ajax'
 import { message } from 'antd'
@@ -44,6 +45,7 @@ export class DecoratorModule extends EffectModule<RawState> {
   fetchRepoByUser(payload$: Observable<string>) {
     return payload$.pipe(
       filter(user => !!user),
+      distinctUntilChanged(),
       debounceTime(300),
       switchMap(user =>
         ajax.getJSON<Repo[]>(`https://api.github.com/users/${user}/repos`).pipe(

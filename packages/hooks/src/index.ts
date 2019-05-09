@@ -15,7 +15,8 @@ import {
   map,
   startWith,
   catchError,
-  repeatWhen
+  repeatWhen,
+  distinctUntilChanged
 } from 'rxjs/operators'
 import { message } from 'antd'
 import { ajax } from 'rxjs/ajax'
@@ -49,6 +50,7 @@ export class HooksState extends Ayanami<RawState> {
   fetchRepoByUser(payload$: Observable<string>): Observable<EffectAction> {
     return payload$.pipe(
       filter(user => !!user),
+      distinctUntilChanged(),
       debounceTime(300),
       switchMap(user =>
         ajax.getJSON<Repo[]>(`https://api.github.com/users/${user}/repos`).pipe(

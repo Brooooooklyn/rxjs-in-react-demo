@@ -9,7 +9,8 @@ import {
   debounceTime,
   filter,
   startWith,
-  repeatWhen
+  repeatWhen,
+  distinctUntilChanged
 } from 'rxjs/operators'
 import { ajax } from 'rxjs/ajax'
 
@@ -39,6 +40,7 @@ const fetchRepoByUser = (action$: Observable<Action<string>>) =>
     ofType(`${REQUESTED_USER_REPOS}`),
     map(({ payload: user }) => user),
     filter(user => !!user),
+    distinctUntilChanged(),
     debounceTime(300),
     switchMap(user =>
       ajax.getJSON<Repo[]>(`https://api.github.com/users/${user}/repos`).pipe(
