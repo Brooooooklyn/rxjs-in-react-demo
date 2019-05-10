@@ -17,15 +17,15 @@
   "devDependencies": {
     "@types/enzyme": "^3.9.1",
     "@types/jest": "^24.0.12",
-    "@types/lodash": "^4.14.124",
-    "@types/react": "^16.8.16",
+    "@types/lodash": "^4.14.125",
+    "@types/react": "^16.8.17",
     "@types/react-dom": "^16.8.4",
     "@types/react-redux": "^7.0.8",
-    "@types/react-router": "^4.4.5",
-    "@types/react-router-dom": "^4.3.2",
-    "@types/redux-actions": "^2.6.0",
+    "@types/react-router": "^5.0.0",
+    "@types/react-router-dom": "^4.3.3",
+    "@types/redux-actions": "^2.6.1",
     "@types/sinon": "^7.0.11",
-    "@types/webpack": "^4.4.30",
+    "@types/webpack": "^4.4.31",
     "css-loader": "^2.1.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
@@ -35,15 +35,15 @@
     "lerna": "^3.13.4",
     "sinon": "^7.3.2",
     "style-loader": "^0.23.1",
-    "ts-loader": "^5.4.5",
+    "ts-loader": "^6.0.0",
     "typescript": "^3.4.5",
-    "webpack": "^4.30.0",
+    "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
     "@asuka/di": "^0.1.5",
-    "antd": "^3.16.6",
+    "antd": "^3.17.0",
     "ayanami": "^0.9.1",
     "connected-react-router": "^6.4.0",
     "lodash": "^4.17.11",
@@ -57,6 +57,6 @@
     "redux-epics-decorator": "^0.10.4",
     "redux-observable": "^1.1.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^6.5.1"
+    "rxjs": "^6.5.2"
   }
 }
