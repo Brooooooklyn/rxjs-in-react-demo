@@ -23,7 +23,7 @@ module.exports = {
 
   watch: true,
 
-  context: join(__dirname, 'packages'),
+  context: join(__dirname, '../packages'),
 
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
