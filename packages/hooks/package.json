@@ -24,6 +24,7 @@
     "url": "https://github.com/Brooooooklyn/rxjs-in-react-demo/issues"
   },
   "dependencies": {
-    "@demo/raw": "^0.0.0"
+    "@demo/raw": "^0.0.0",
+    "immer": "^4.0.1"
   }
 }

@@ -2,6 +2,7 @@ import React, { useCallback, memo, FC } from 'react'
 import { HooksModule } from '@demo/hooks'
 import { Button, Input, Icon, List, Card } from 'antd'
 import { Repo } from '@demo/raw'
+import { useAyanami } from 'ayanami'
 
 const Repos: FC<{ repos: Repo[] }> = memo(({ repos }) => {
   return (
@@ -31,7 +32,7 @@ const Repos: FC<{ repos: Repo[] }> = memo(({ repos }) => {
 })
 
 export const HooksContainer = memo(() => {
-  const [stateProps, dispatchProps] = HooksModule.useHooks()
+  const [stateProps, dispatchProps] = useAyanami(HooksModule)
 
   const onRetry = useCallback(() => {
     dispatchProps.retry$()

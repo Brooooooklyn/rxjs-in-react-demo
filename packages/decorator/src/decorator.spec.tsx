@@ -4,7 +4,6 @@ import { TestBedFactory } from 'redux-epics-decorator/testbed'
 import { GlobalState } from '@demo/app/redux'
 import { SinonFakeTimers, SinonStub, useFakeTimers, stub } from 'sinon'
 import { of, timer, throwError } from 'rxjs'
-import { noop } from 'lodash'
 import { mapTo } from 'rxjs/operators'
 import { mount } from 'enzyme'
 

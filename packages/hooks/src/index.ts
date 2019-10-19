@@ -1,12 +1,12 @@
 import {
   Ayanami,
-  Singleton,
   Effect,
   DefineAction,
-  Reducer,
+  ImmerReducer,
   EffectAction
 } from 'ayanami'
 import { State as RawState, Repo } from '@demo/raw'
+import { Injectable } from '@asuka/di'
 import { Observable, of } from 'rxjs'
 import {
   filter,
@@ -20,8 +20,9 @@ import {
 } from 'rxjs/operators'
 import { message } from 'antd'
 import { RepoService } from './service'
+import { Draft } from 'immer'
 
-@Singleton()
+@Injectable()
 export class HooksModule extends Ayanami<RawState> {
   defaultState = {
     repos: [],
@@ -35,19 +36,25 @@ export class HooksModule extends Ayanami<RawState> {
     super()
   }
 
-  @Reducer()
-  loading(_: void, state: RawState) {
-    return { ...state, repos: [], loading: true, error: false }
+  @ImmerReducer()
+  loading(state: Draft<RawState>) {
+    state.error = false
+    state.loading = true
+    state.repos = []
   }
 
-  @Reducer()
-  success(repos: Repo[], state: RawState) {
-    return { ...state, repos, loading: false, error: false }
+  @ImmerReducer()
+  success(state: Draft<RawState>, repos: Repo[]) {
+    state.repos = repos
+    state.loading = false
+    state.error = false
   }
 
-  @Reducer()
-  fail(_: void, state: RawState) {
-    return { ...state, repos: [], loading: false, error: true }
+  @ImmerReducer()
+  fail(state: Draft<RawState>) {
+    state.repos = []
+    state.loading = false
+    state.error = true
   }
 
   @Effect()

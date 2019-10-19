@@ -13,7 +13,7 @@ import 'antd/dist/antd.css'
 const App = () =>
   <Provider store={store}>
     <BrowserRouter>
-      <Menu>
+      <Menu mode="horizontal">
         <Menu.Item>
           <Link to='/redux-observable'>
             redux-observable
